@@ -41,7 +41,6 @@ public class CorsServlet extends HttpServlet {
 		}
 		if (request.getRequestURI().equals(request.getContextPath() + "/cors/refresh")) { // 刷新
 			CorsFilter.init();
-			response.setContentType("application/json; charset=UTF-8");
 			PrintWriter out = response.getWriter();
 			out.append("success");
 			out.flush();
