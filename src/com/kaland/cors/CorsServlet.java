@@ -29,7 +29,7 @@ public class CorsServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType(CONTENT_TYPE);
-		request.setAttribute("version", "1.0.3");
+		request.setAttribute("version", "1.0.1");
 		request.setAttribute("allow_methods", CorsFilter.getAllow_methods());
 		request.setAttribute("allow_credentials", CorsFilter.getAllow_credentials());
 		request.setAttribute("allow_origins", CorsFilter.getAllow_origins());
