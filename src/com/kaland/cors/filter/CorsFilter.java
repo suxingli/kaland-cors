@@ -43,8 +43,12 @@ public class CorsFilter implements Filter {
 	private static String allow_credentials; // 是否允许发送Cookie
 	private static List<String> allow_origins = new ArrayList<String>(0); // 允许跨域请求的域列表
 
-	@Override
-	public void init(FilterConfig filterConfig) throws ServletException {
+	/**
+	 * 初始化
+	 * @author 苏行利
+	 * @date 2019-10-10 17:35:59
+	 */
+	public static void init() {
 		try {
 			Document doc = new SAXReader().read(CorsFilter.class.getResourceAsStream("/cors-cfg.xml"));
 			Element root = doc.getRootElement();
@@ -54,12 +58,18 @@ public class CorsFilter implements Filter {
 			if (_allow_origins == null) {
 				return;
 			}
+			allow_origins.clear();
 			for (Element element : _allow_origins.elements(ALLOW_ORIGIN)) {
 				allow_origins.add(element.getTextTrim());
 			}
 		} catch (DocumentException e) {
 			e.printStackTrace();
 		}
+	}
+
+	@Override
+	public void init(FilterConfig filterConfig) throws ServletException {
+		init();
 	}
 
 	@Override
