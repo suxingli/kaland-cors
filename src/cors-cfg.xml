@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cors>
+	<allow-methods>GET,POST</allow-methods> <!-- 允许跨域请求的方法 -->
+	<allow-credentials>true</allow-credentials> <!-- 是否允许发送Cookie -->
+	<allow-origins> <!-- 允许跨域请求的域列表 -->
+		<allow-origin>*</allow-origin>
+	</allow-origins>
+</cors>
