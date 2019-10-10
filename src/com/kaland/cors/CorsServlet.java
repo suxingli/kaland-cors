@@ -15,7 +15,7 @@ import com.kaland.cors.filter.CorsFilter;
  * @author 苏行利
  * @date 2019-10-10 16:03:56
  */
-@WebServlet(name = "cors", value = "/cors", loadOnStartup = 1)
+@WebServlet(urlPatterns = "/cors", loadOnStartup = 1)
 public class CorsServlet extends HttpServlet {
 	private static final long serialVersionUID = -2522590307790871960L;
 	private static final String CONTENT_TYPE = "text/html; charset=UTF-8";
